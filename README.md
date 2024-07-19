@@ -4,7 +4,8 @@
 This project is a Playwright testing suite designed to validate the functionality and visibility of various components in Jumia web application across different browsers. The suite includes tests for the Navbar, Add to Cart button, Card components, Help dropdown icons, Product testing, and Search button.
 
 ## Screenshot Samples
-![Example Image](https://drive.google.com/file/d/1QHpzud4WAr6w8YcYj9kZ5hcrSUcGQDpv/view?usp=drive_link)
+![Description of Image](https://drive.google.com/uc?export=view&id=1QHpzud4WAr6w8YcYj9kZ5hcrSUcGQDpv)
+
 
 
 
