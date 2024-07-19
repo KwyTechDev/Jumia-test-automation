@@ -23,15 +23,15 @@ This project is a Playwright testing suite designed to validate the functionalit
 To get started, clone the repository and install the necessary dependencies:
 
 ```bash
-git clone https://github.com/your-username/playwright-testing-suite.git
-cd playwright-testing-suite
+git clone https://github.com/KwyTechDev/Jumia-test-automation.git
+cd Jumia-test-automation
 npm install
 ```
 
 ## Project Structure
 
 ```plaintext
-playwright-testing-suite/
+Jumia-test-automation/
 ├── Jumia-tests/
 │   ├── NavComponentsVisibility.spec.js
 │   ├── Add-to-cart-1.spec.js
