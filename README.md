@@ -4,7 +4,7 @@
 This project is a Playwright testing suite designed to validate the functionality and visibility of various components in Jumia web application across different browsers. The suite includes tests for the Navbar, Add to Cart button, Card components, Help dropdown icons, Product testing, and Search button.
 
 ## Screenshot Samples
-![Description of Image](https://drive.google.com/uc?export=view&id=1QHpzud4WAr6w8YcYj9kZ5hcrSUcGQDpv)
+![Report after Test](screenshoots/jumia.png)
 
 
 
@@ -23,15 +23,15 @@ This project is a Playwright testing suite designed to validate the functionalit
 To get started, clone the repository and install the necessary dependencies:
 
 ```bash
-git clone https://github.com/your-username/playwright-testing-suite.git
-cd playwright-testing-suite
+git clone https://github.com/KwyTechDev/Jumia-test-automation.git
+cd Jumia-test-automation
 npm install
 ```
 
 ## Project Structure
 
 ```plaintext
-playwright-testing-suite/
+Jumia-test-automation/
 ├── Jumia-tests/
 │   ├── NavComponentsVisibility.spec.js
 │   ├── Add-to-cart-1.spec.js
