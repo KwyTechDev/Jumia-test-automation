@@ -6,7 +6,11 @@ on:
   pull_request:
     branches: [ main, master ]
   schedule:
+<<<<<<< HEAD
     - cron: '0 0 * * *' # This runs the job daily at midnight
+=======
+    - cron: '* * * * *'
+>>>>>>> b3b090cde3ab2395547561ff835f369f95f96bfb
 
 jobs:
   test:
