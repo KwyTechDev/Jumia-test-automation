@@ -27,24 +27,22 @@ jobs:
       run: npx playwright install --with-deps
 
     - name: Download Allure History Artifact
-      if: always()
       uses: actions/download-artifact@v3
       with:
         name: allure-results-history
         path: allure-results/history
+      continue-on-error: true
 
     - name: Run Playwright tests with retries
       run: npx playwright test --reporter=allure-playwright --retries=2
 
     - name: Save Allure History
-      if: always()
       run: |
         echo "Saving Allure history..."
         mkdir -p allure-results-history
         cp -r allure-results/history allure-results-history
 
     - name: Upload Allure History Artifact
-      if: always()
       uses: actions/upload-artifact@v3
       with:
         name: allure-results-history
