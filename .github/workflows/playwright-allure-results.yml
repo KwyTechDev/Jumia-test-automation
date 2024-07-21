@@ -6,27 +6,49 @@ on:
   pull_request:
     branches: [ main, master ]
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '0 0 * * *' # This runs the job daily at midnight
 
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v4
 
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
-        
+
     - name: Install dependencies
       run: npm ci
-      
+
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
-    - name: Run Playwright tests
-      run: npx playwright test --reporter=allure-playwright
+    - name: Download Allure History Artifact
+      if: always()
+      uses: actions/download-artifact@v3
+      with:
+        name: allure-results-history
+        path: allure-results/history
+
+    - name: Run Playwright tests with retries
+      run: npx playwright test --reporter=allure-playwright --retries=2
+
+    - name: Save Allure History
+      if: always()
+      run: |
+        echo "Saving Allure history..."
+        mkdir -p allure-results-history
+        cp -r allure-results/history allure-results-history
+
+    - name: Upload Allure History Artifact
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-results-history
+        path: allure-results-history
 
     - name: Generate Allure Report
       run: npx allure generate allure-results --output allure-report --clean
